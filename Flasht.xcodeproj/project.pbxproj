@@ -11,6 +11,8 @@
 		13E39FAF27078185003914FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E39FAE27078185003914FC /* ContentView.swift */; };
 		13E39FB127078186003914FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13E39FB027078186003914FC /* Assets.xcassets */; };
 		13E39FB427078186003914FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13E39FB327078186003914FC /* Preview Assets.xcassets */; };
+		13E39FBB2707826F003914FC /* CardStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E39FBA2707826F003914FC /* CardStorageService.swift */; };
+		13E39FBD270782A3003914FC /* CardModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E39FBC270782A3003914FC /* CardModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		13E39FAE27078185003914FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		13E39FB027078186003914FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13E39FB327078186003914FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		13E39FBA2707826F003914FC /* CardStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStorageService.swift; sourceTree = "<group>"; };
+		13E39FBC270782A3003914FC /* CardModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +55,12 @@
 		13E39FAB27078185003914FC /* Flasht */ = {
 			isa = PBXGroup;
 			children = (
+				13E39FBC270782A3003914FC /* CardModels.swift */,
 				13E39FAC27078185003914FC /* FlashtApp.swift */,
 				13E39FAE27078185003914FC /* ContentView.swift */,
 				13E39FB027078186003914FC /* Assets.xcassets */,
 				13E39FB227078186003914FC /* Preview Content */,
+				13E39FBA2707826F003914FC /* CardStorageService.swift */,
 			);
 			path = Flasht;
 			sourceTree = "<group>";
@@ -137,6 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13E39FBB2707826F003914FC /* CardStorageService.swift in Sources */,
+				13E39FBD270782A3003914FC /* CardModels.swift in Sources */,
 				13E39FAF27078185003914FC /* ContentView.swift in Sources */,
 				13E39FAD27078185003914FC /* FlashtApp.swift in Sources */,
 			);
