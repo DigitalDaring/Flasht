@@ -10,7 +10,7 @@ import SwiftUI
 
 struct DeckView: View {
     var deckCollection: DeckCollectionModel
-    var deck: DeckModel
+    @State var deck: DeckModel
     @State private var isSeeDetailsLinkActive = false
     var body: some View {
         NavigationLink(destination: SeeDeckDetailsView(deckCollection: deckCollection, deck: deck)) {

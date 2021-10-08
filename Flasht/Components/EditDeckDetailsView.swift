@@ -12,11 +12,12 @@ struct EditDeckDetailsView: View {
     @State var deckCollection: DeckCollectionModel
     @State var deck: DeckModel
     @State var isAddNewLinkActive = false
-    
+
     func saveCard(callText: String, answerText: String) {
         if let deckIndex = deckCollection.decks.firstIndex(where: {$0.deckTitle == deck.deckTitle}) {
+            let newCard = CardModel(callText: callText, answerText: answerText)
             deck.cards.append(
-                CardModel(callText: callText, answerText: answerText)
+                newCard
             )
             
             deckCollection.decks[deckIndex] = deck

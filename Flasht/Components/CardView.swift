@@ -11,9 +11,10 @@ import SwiftUI
 struct CardView: View {
     
     var card: CardModel
+    var successRemoval: (() -> Void)? = nil
+    var failureRemoval: (() -> Void)? = nil
     @State private var isShowingAnswer = false
     @State private var offset = CGSize.zero
-    
     
     static var example: CardView {
         CardView(card: CardModel(callText: "Ich bin ein Berliner", answerText: "I am a donut"))
@@ -48,7 +49,13 @@ struct CardView: View {
                 .onChanged {gesture in self.offset = gesture.translation}
                 .onEnded { _ in
                     if abs(self.offset.width) > 100 {
-                        // remove card
+                        isShowingAnswer = false
+                        if(self.offset.width > 0) {
+                            self.successRemoval?()
+                        } else {
+                            self.failureRemoval?()
+                        }
+                        self.offset = .zero
                     } else {
                         self.offset = .zero
                     }
