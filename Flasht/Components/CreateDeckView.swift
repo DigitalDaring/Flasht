@@ -29,6 +29,6 @@ struct CreateDeckView : View {
             Button(action: {self.saveDeck()}) {
                 Text("Save")
             }
-        }.navigationTitle("Create A New Card Deck")
+        }.navigationTitle("Create A Deck")
     }
 }
