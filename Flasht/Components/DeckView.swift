@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct DeckView: View {
-    var deckCollection: DeckCollectionModel
+    @State var deckCollection: DeckCollectionModel
     @State var deck: DeckModel
     @State private var isSeeDetailsLinkActive = false
     var body: some View {
