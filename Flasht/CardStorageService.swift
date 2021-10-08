@@ -8,7 +8,7 @@
 import Foundation
 
 class CardStorageService {
-    let ourCardStacksFile = "CardStacksFile"
+    let ourCardDecksFile = "CardDecksFile"
     
     enum CardStorageServiceErrors: Error {
         case weirdEncodingError
@@ -56,16 +56,16 @@ class CardStorageService {
         print("File successfully saved")
     }
     
-    public func loadFullDeckFromStorage() -> FullDeckModel {
-        let defaultDeck = FullDeckModel(cardStacks: [])
+    public func loadDeckCollectionFromStorage() -> DeckCollectionModel {
+        let defaultDeck = DeckCollectionModel(decks: [])
         
-        guard let jsonString = self.read(fromDocumentsWithFileName: ourCardStacksFile) else {
+        guard let jsonString = self.read(fromDocumentsWithFileName: ourCardDecksFile) else {
             return defaultDeck
         }
         
         if let dataFromString = jsonString.data(using: .utf8) {
             do {
-                let modelFromData = try JSONDecoder().decode(FullDeckModel.self, from: dataFromString)
+                let modelFromData = try JSONDecoder().decode(DeckCollectionModel.self, from: dataFromString)
                 return modelFromData
             } catch {
                 print("Error occured while decoding JSON in file", error)
@@ -77,11 +77,11 @@ class CardStorageService {
     }
     
     
-    public func saveFullDeckToStorage(fullDeck: FullDeckModel) {
+    public func saveDeckCollectionToStorage(deckCollection: DeckCollectionModel) {
         do {
-            let encodedDeck = try JSONEncoder().encode(fullDeck)
+            let encodedDeck = try JSONEncoder().encode(deckCollection)
             guard let jsonString = String(data: encodedDeck, encoding: .utf8) else { throw CardStorageServiceErrors.weirdEncodingError }
-            self.save(text: jsonString, toDirectory: self.documentDirectory(), withFileName: ourCardStacksFile)
+            self.save(text: jsonString, toDirectory: self.documentDirectory(), withFileName: ourCardDecksFile)
         } catch {
             print("Error occurred while encoding JSON", error)
         }

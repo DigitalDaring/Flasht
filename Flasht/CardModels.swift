@@ -15,12 +15,12 @@ struct CardModel: Codable, Identifiable {
     var learningProgress = 0
 }
 
-struct CardStackModel: Codable, Identifiable {
+struct DeckModel: Codable, Identifiable {
     var id = UUID()
-    var stackTitle = ""
+    var deckTitle = ""
     var cards: Array<CardModel> = []
 }
 
-struct FullDeckModel: Codable {
-    var cardStacks: Array<CardStackModel> = []
+struct DeckCollectionModel: Codable {
+    var decks: Array<DeckModel> = []
 }
