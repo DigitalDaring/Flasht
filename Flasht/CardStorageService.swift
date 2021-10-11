@@ -8,7 +8,7 @@
 import Foundation
 
 class CardStorageService {
-    let ourCardDecksFile = "CardDecksFile"
+    let ourCardDecksFile = "CardDecksFilez"
     
     enum CardStorageServiceErrors: Error {
         case weirdEncodingError
@@ -75,7 +75,6 @@ class CardStorageService {
         
         return defaultDeck
     }
-    
     
     public func saveDeckCollectionToStorage(deckCollection: DeckCollectionModel) {
         do {
